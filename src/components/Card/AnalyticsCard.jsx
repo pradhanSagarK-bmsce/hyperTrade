@@ -18,20 +18,24 @@ const AnalyticsCard = () => {
     const calculateAverageRating = () => {
       let totalRatings = 0;
       let totalReviews = 0;
-  
+    
       productReviews.forEach(product => {
         if (product.hasReviews) {
           product.reviews.forEach(review => {
-            totalRatings += review.ratings; // Add the rating to the total
-            totalReviews += 1; // Increment the review count
+            // Convert the ratings to a number
+            const rating = parseFloat(review.ratings); // or use +review.ratings
+            if (!isNaN(rating)) {  // Check if it's a valid number
+              totalRatings += rating;  // Add the rating to the total
+              totalReviews += 1;        // Increment the review count
+            }
           });
         }
       });
-  
+    
       // Return the average rating (rounded to one decimal place)
       return totalReviews > 0 ? (totalRatings / totalReviews).toFixed(1) : 0;
     };
-  
+    
 
     const averageRating = calculateAverageRating(); // Get the average rating
 

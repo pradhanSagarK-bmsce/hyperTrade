@@ -11,13 +11,14 @@ import {
 import { ansQuestion } from "../../../redux/features/ProductQuestionSlice";
 import { fetchQuestions } from "../../../redux/features/ProductQuestionSlice";
 
-const ProductQuestions = ({ data }) => {
+const ProductQuestions = () => {
   const dispatch = useDispatch();
   const themeMode = useSelector((state) => state.theme.mode);
+  const productQuestions = useSelector((state) => state.productQuestions.productQuestions)
   const [expandedProduct, setExpandedProduct] = useState(null); // Tracks the expanded product
   const [answerInput, setAnswerInput] = useState({}); // Tracks the answers being typed
-  const [products, setProducts] = useState(data || []); // Ensure `products` is initialized as an empty array if `data` is undefined
-
+  const [products, setProducts] = useState(productQuestions || []); // Ensure `products` is initialized as an empty array if `productQuestions` is undefined
+    // console.log(products)
   // Toggle the visibility of questions for a product
   const toggleProduct = (productId) => {
     setExpandedProduct(expandedProduct === productId ? null : productId);
@@ -87,7 +88,7 @@ const ProductQuestions = ({ data }) => {
       </button>
       </div>
       {
-        !data || !data.length ? 
+        !productQuestions || !productQuestions.length ? 
         (
           <div className="w-full h-full flex justify-center items-center">
             <p className={`${themeMode === 'theme-mode-dark' ? 'text-txt-white' : 'text-black'} text-2xl font-semibold`}>No Questions Yet</p>

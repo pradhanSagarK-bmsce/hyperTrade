@@ -26,7 +26,6 @@ const Customers = () => {
       dispatch(fetchQuestions())
      }, []);
    
-  const productQuestions = useSelector((state) => state.productQuestions.productQuestions)
 
   // console.log("productQuestions : ", productQuestions );
 
@@ -48,7 +47,7 @@ const Customers = () => {
         </div>
 
         <div className="col-span-6 row-span-6"><CustomerList /></div>
-        <div className="col-span-3 row-span-6 rounded-lg"><ProductQuestions data={productQuestions}/></div>
+        <div className="col-span-3 row-span-6 rounded-lg"><ProductQuestions /></div>
       </div>
     </div>
   );

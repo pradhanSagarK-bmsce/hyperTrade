@@ -195,14 +195,14 @@ const Navbar = ({ handleSignIn }) => (
 // Hero Section Component
 const HeroSection = ({ handleSignIn }) => (
   <header className="pt-32 pb-20 relative overflow-hidden">
-    <div className="bg-black absolute inset-0 opacity-20 ">
+    <div className="bg-black absolute inset-0 opacity-20 "></div>
     <div className="max-w-8xl mx-auto px-6">
-      <div className="flex flex-col md:flex-row items-center gap-12">
+      <div className="flex flex-col md:flex-row items-center gap-12 md:items-start">
         <div className="flex-1 text-center md:text-left">
-          <h1 className="text-5xl text-orange-500 font-bold mb-6">
+          <h1 className="md:text-5xl text-4xl text-orange-500 font-bold mb-6">
             Your Hyper-Productive Platform for Martian Business.
           </h1>
-          <p className="text-lg text-white font-bold mb-8">
+          <p className="text-lg text-[#ffffff] font-extrabold mb-8">
             Revolutionizing the way Martian businesses operate with powerful tools and an intuitive interface.
           </p>
           <button className="bg-[#26DC5C] text-black font-semibold px-8 py-3 rounded-lg relative z-10"   onClick={handleSignIn}>
@@ -217,7 +217,6 @@ const HeroSection = ({ handleSignIn }) => (
           />
         </div>
       </div>
-    </div>
     </div>
   </header>
 );

@@ -5,6 +5,7 @@ import { baseURL } from "../../services/getData";
 
 export const fetchQuestions  =  createAsyncThunk('fetchQuestions' , async () => {
     try {
+      // console.log("trying to get questions ")
         const response = await axios.get(
           `${baseURL}/vendor/productQuestions`,
           {
