@@ -34,17 +34,20 @@ const Discounts = () => {
        }
      }, [orders]);
    
-     // Update customer count, total products sold, and average order value when sales change
-     useEffect(() => {
-       if (sales.length > 0) {
-         // Calculate unique customers count from sales
-         const uniqueCustomerIds = new Set(sales.map((sale) => sale.productId));
-         setCustomerCount(uniqueCustomerIds.size);
-   
-         const total = productsSold();
-         setTotalSold(total);
-       }
-     }, [sales]);
+    // Update customer count, total products sold when sales change
+  useEffect(() => {
+    if (sales.length > 0) {
+      // Calculate unique customers count from sales
+      const uniqueCustomerIds = new Set(sales.map((sale) => sale.custId));
+      setCustomerCount(uniqueCustomerIds.size);
+      // console.log("Unique customer count:", uniqueCustomerIds.size);
+
+      const total = productsSold();
+      setTotalSold(total);
+
+    }
+  }, [sales]);
+
 
   const weekDataTR = [
     { day: "Monday", revenue: 7234 },

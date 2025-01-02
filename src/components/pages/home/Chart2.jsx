@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import {
     AreaChart,
@@ -6,16 +6,63 @@ import {
     XAxis,
     YAxis,
     Tooltip,
-    Legend,
+    Legend, 
     ResponsiveContainer,
     CartesianGrid
 } from 'recharts';
 
 const Chart2 = () => {
     const themeMode = useSelector((state) => state.theme.mode);
+    const orders = useSelector((state) => state.ordersData.orders)
+    const [sales , setSales] = useState([])
 
+    
+  useEffect(() => {
+    if (orders && orders.sales) {
+      setSales(orders.sales)
+    }
+  }, [orders]);
+  console.log("sales : " , sales)
     // Sample data for the chart
-    const data = [
+
+
+// Function to format month
+const formatMonth = (monthNumber) => {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return months[monthNumber - 1];
+};
+
+// Helper function to sum revenue and profit by month
+const getMonthlySummary = (sales) => {
+    const summary = sales.reduce((acc, sale) => {
+        const [day, month, year] = sale.orderDateTime.split("/").map(Number);
+
+        // If year is not 2024, assume it is 2024
+        const processedYear = year !== 2024 ? 2024 : year;
+        const formattedDate = new Date(`${processedYear}-${month}-${day}`);
+
+        if (!formattedDate.getTime()) return acc;
+
+        const monthName = formatMonth(formattedDate.getMonth() + 1);
+
+        if (!acc[monthName]) {
+            acc[monthName] = { month: monthName, revenue: 0, profit: 0 };
+        }
+
+        acc[monthName].revenue += sale.saleRevenue || 0;
+        acc[monthName].profit += sale.saleProfit || 0;
+
+        return acc;
+    }, {});
+
+    return Object.values(summary);
+};
+
+// Get the monthly summary
+const monthlyData = getMonthlySummary(sales);
+console.log(monthlyData);
+
+    const data = !orders ?  [
         { month: 'Jan', revenue: 100000, profit: 35000 },
         { month: 'Feb', revenue: 120000, profit: 45000 },
         { month: 'Mar', revenue: 130000, profit: 75000 },
@@ -28,7 +75,10 @@ const Chart2 = () => {
         { month: 'Oct', revenue: 175000, profit: 35000 },
         { month: 'Nov', revenue: 200000, profit: 23500 },
         { month: 'Dec', revenue: 100000, profit: 50000 },
-    ];
+    ] 
+    :
+    monthlyData
+    ;
 
    
     const areaColors = {

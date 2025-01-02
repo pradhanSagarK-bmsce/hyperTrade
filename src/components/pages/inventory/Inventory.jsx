@@ -97,17 +97,20 @@ const orders = useSelector((state) => state.ordersData.orders)
       }
     }, [orders]);
   
-    // Update customer count, total products sold, and average order value when sales change
-    useEffect(() => {
-      if (sales.length > 0) {
-        // Calculate unique customers count from sales
-        const uniqueCustomerIds = new Set(sales.map((sale) => sale.productId));
-        setCustomerCount(uniqueCustomerIds.size);
-  
-        const total = productsSold();
-        setTotalSold(total);
-      }
-    }, [sales]);
+
+ // Update customer count, total products sold, and average order value when sales change
+  useEffect(() => {
+    if (sales.length > 0) {
+      // Calculate unique customers count from sales
+      const uniqueCustomerIds = new Set(sales.map((sale) => sale.custId));
+      setCustomerCount(uniqueCustomerIds.size);
+      // console.log("Unique customer count:", uniqueCustomerIds.size);
+
+      const total = productsSold();
+      setTotalSold(total);
+
+    }
+  }, [sales]);
 
   const getSecondKeyName = (arr) => {
     // Get the second key name from the first object in the array
