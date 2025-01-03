@@ -9,7 +9,7 @@ const ProductDetails = () => {
 const themeMode = useSelector((state) => state.theme.mode);
 const products = useSelector((state) => state.productsData.products)
 const selectedProduct = useSelector((state) => state.selectProduct);
-  console.log(selectedProduct);
+  // console.log(selectedProduct);
   const getLimitedDescription = (description) => {
     if (!description) return ''; // Return an empty string if description is undefined or null
     const words = description.split(' '); // Split the description into words

@@ -98,7 +98,7 @@ const VendorLogin = ({ setVendorInfo }) => {
             className="inputcontainer h-16 w-[300px] mb-[0.1rem]"
           >
             <label
-              className="text-sm font-medium text-gray-900 dark:text-white"
+              className="text-sm font-medium text-white"
               htmlFor="email"
             >
               Email:
@@ -123,7 +123,7 @@ const VendorLogin = ({ setVendorInfo }) => {
             className="inputcontainer h-16 w-[300px] mb-[0.1rem]"
           >
             <label
-              className="text-sm font-medium text-gray-900 dark:text-white"
+              className="text-sm font-medium text-white"
               htmlFor="password"
             >
               Password:

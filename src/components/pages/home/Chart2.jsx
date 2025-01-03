@@ -22,7 +22,7 @@ const Chart2 = () => {
       setSales(orders.sales)
     }
   }, [orders]);
-  console.log("sales : " , sales)
+//   console.log("sales : " , sales)
     // Sample data for the chart
 
 
@@ -60,7 +60,7 @@ const getMonthlySummary = (sales) => {
 
 // Get the monthly summary
 const monthlyData = getMonthlySummary(sales);
-console.log(monthlyData);
+// console.log(monthlyData);
 
     const data = !orders ?  [
         { month: 'Jan', revenue: 100000, profit: 35000 },

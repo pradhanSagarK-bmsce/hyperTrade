@@ -85,9 +85,9 @@ const orders = useSelector((state) => state.ordersData.orders)
  const [customerCount, setCustomerCount] = useState(0); // unique customers count
   const [totalSold, setTotalSold] = useState(0); // total products sold
   const productsSold = () => {
-    console.log("Calculating total products sold...");
+    // console.log("Calculating total products sold...");
     const total = sales.reduce((acc, sale) => acc + sale.quantity, 0);
-    console.log("Total products sold:", total);
+    // console.log("Total products sold:", total);
     return total;
   };
 
@@ -161,7 +161,7 @@ const orders = useSelector((state) => state.ordersData.orders)
     dispatch(fetchProducts());
   }, []);
 
-  console.log(products);
+  // console.log(products);
   return (
     <div className="h-full">
       <h1 className="pageHeader pl-2">Inventory</h1>

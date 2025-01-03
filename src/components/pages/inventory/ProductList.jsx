@@ -20,7 +20,7 @@ function ProductList() {
   const status = useSelector((state) => state.productsData.status);
   const themeMode = useSelector((state) => state.theme.mode);
   const colorMode = useSelector((state) => state.theme.color);
-  console.log("products recieved or changed ");
+  // console.log("products recieved or changed ");
   const parts = colorMode.split("-");
   const result = parts.length > 2 ? parts[2] : "";
   const dispatch = useDispatch();

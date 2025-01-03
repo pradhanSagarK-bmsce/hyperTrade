@@ -139,13 +139,13 @@ const VendorSignup = () => {
             )}
 
             <div id="namecontainer" className='inputcontainer h-16 w-[300px] mb-[0.1rem]'>
-              <label className="text-sm font-medium text-gray-900 dark:text-white" htmlFor="name">Company Name:</label> <br />
+              <label className="text-sm font-medium text-white" htmlFor="name">Company Name:</label> <br />
               <input className='w-3/4 h-2/5 bg-black bg-opacity-10 border border-gray-400 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5' type="text" id='name' {...register('name')} required />
               {errors.name && <div className='errorcontainer text-[0.75rem] text-red-500'>{errors.name.message}</div>}
             </div>
 
             <div id="imagecontainer" className='inputcontainer h-16 w-[300px] mb-[0.1rem]'>
-              <label className="text-sm font-medium text-gray-900 dark:text-white" htmlFor="image">Company Logo:</label> <br />
+              <label className="text-sm font-medium text-white" htmlFor="image">Company Logo:</label> <br />
               <Controller
                 name="image"
                 control={control}
@@ -171,25 +171,25 @@ const VendorSignup = () => {
             </div>
 
             <div id="telnumcontainer" className='inputcontainer h-16 w-[300px] mb-[0.1rem]'>
-              <label className="text-sm font-medium text-gray-900 dark:text-white" htmlFor="telnum">Telephone:</label> <br />
+              <label className="text-sm font-medium text-white" htmlFor="telnum">Telephone:</label> <br />
               <input className='w-3/4 h-2/5 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 bg-black bg-opacity-10 border border-gray-400' type="text" id='telnum' {...register('telnum')} required />
               {errors.telnum && <div className='errorcontainer text-[0.75rem] text-red-500'>{errors.telnum.message}</div>}
             </div>
 
             <div id="licencenumcontainer" className='inputcontainer h-16 w-[300px] mb-[0.1rem]'>
-              <label className="text-sm font-medium text-gray-900 dark:text-white" htmlFor="licencenum">License No:</label> <br />
+              <label className="text-sm font-medium text-white" htmlFor="licencenum">License No:</label> <br />
               <input className='w-3/4 h-2/5 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 bg-black bg-opacity-10 border border-gray-400' type="text" id='licencenum' {...register('licencenum')} required />
               {errors.licencenum && <div className='errorcontainer text-[0.75rem] text-red-500'>{errors.licencenum.message}</div>}
             </div>
 
             <div id="companyaddcontainer" className='inputcontainer h-20 w-[300px] mb-[1.2rem]'>
-              <label className="text-sm font-medium text-gray-900 dark:text-white" htmlFor="address">Company Address:</label> <br />
+              <label className="text-sm font-medium text-white" htmlFor="address">Company Address:</label> <br />
               <textarea className='w-3/4 resize-none text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 bg-black bg-opacity-10 border border-gray-400' id='address' {...register('address')} required></textarea>
               {errors.address && <div className='errorcontainer text-[0.75rem] text-red-500'>{errors.address.message}</div>}
             </div>
 
             <div id="pincodecontainer" className='inputcontainer h-30 w-[300px] mb-[0.1rem]'>
-              <label className="text-sm font-medium text-gray-900 dark:text-white" htmlFor="pincode">Pin-code:</label> <br />
+              <label className="text-sm font-medium text-white" htmlFor="pincode">Pin-code:</label> <br />
               <input
                 className='w-3/4 h-2/5 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 bg-black bg-opacity-10 border border-gray-400'
                 type="text"
@@ -216,13 +216,13 @@ const VendorSignup = () => {
             <div className="accountdetailsheadcontainer flex justify-center"><h4 className='accountdetails mb-[1.5rem] text-[1.5rem] text-white'>Account Details</h4></div>
 
             <div id="emailcontainer" className='inputcontainer h-16 w-[300px] mb-[0.1rem]'>
-              <label className="text-sm font-medium text-gray-900 dark:text-white" htmlFor="email">Email:</label> <br />
+              <label className="text-sm font-medium text-white" htmlFor="email">Email:</label> <br />
               <input className='w-3/4 h-2/5 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 bg-black bg-opacity-10 border border-gray-400' type="email" id='email' {...register('email')} required />
               {errors.email && <div className='errorcontainer text-[0.75rem] text-red-500'>{errors.email.message}</div>}
             </div>
 
             <div id="passwordcontainer" className='inputcontainer h-16 w-[300px] mb-[0.1rem]'>
-              <label className="text-sm font-medium text-gray-900 dark:text-white" htmlFor="password">Password:</label> <br />
+              <label className="text-sm font-medium text-white" htmlFor="password">Password:</label> <br />
               <div className="flex items-center gap-2">
               <input
                 className="w-3/4 h-2/5 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 bg-black bg-opacity-10 border border-gray-400"
@@ -245,7 +245,7 @@ const VendorSignup = () => {
             </div>
 
             <div id="confirmpasswordcontainer" className='inputcontainer h-16 w-[300px] mb-[0.1rem]'>
-              <label className="text-sm font-medium text-gray-900 dark:text-white" htmlFor="confirmpassword">Confirm Password:</label> <br />
+              <label className="text-sm font-medium text-white" htmlFor="confirmpassword">Confirm Password:</label> <br />
               <div className="flex items-center gap-2">
               <input
                 className="w-3/4 h-2/5 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 bg-black bg-opacity-10 border border-gray-400"
