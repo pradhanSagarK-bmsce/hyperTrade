@@ -53,7 +53,7 @@ const LastestProduct = ({ products }) => {
                   {product.name}
                 </p>
                 <p className="text-sm font-medium text-[#26DC5C]">
-                  ${product.price}
+                ₹{product.price}
                 </p>
               </div>
             </div>

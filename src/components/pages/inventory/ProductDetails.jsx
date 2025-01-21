@@ -117,7 +117,7 @@ const selectedProduct = useSelector((state) => state.selectProduct);
                     : "text-[#26DC5C]"
                 }`}
               >
-                ${selectedProduct?.price}
+                ₹{selectedProduct?.price}
               </p>
               <p
                 className={`text-sm line-through ${
@@ -126,7 +126,7 @@ const selectedProduct = useSelector((state) => state.selectProduct);
                     : "text-red-400"
                 }`}
               >
-                Cost Price: ${selectedProduct?.costPrice}
+                Cost Price: ₹{selectedProduct?.costPrice}
               </p>
             </div>
             <div className="text-left sm:text-right mt-4 sm:mt-0">
