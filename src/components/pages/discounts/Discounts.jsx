@@ -89,31 +89,7 @@ const Discounts = () => {
     { day: "Sun", totalCustomers: 29 },
   ];
 
-  // let totalRevenue = 0;
-  // let totalProfit = 0;
-  // let totalProductsSold = 0;
-  // let totalCustomers = 0;
-
-  // // Sum up the values from each dataset
-  // weekDataTR.forEach((dayData) => {
-  //   totalRevenue += dayData.revenue;
-  // });
-
-  // weekDataTP.forEach((dayData) => {
-  //   totalProfit += dayData.profit;
-  // });
-
-  // weekDataPS.forEach((dayData) => {
-  //   totalProductsSold += dayData.productsSold;
-  // });
-
-  // weekDataTC.forEach((dayData) => {
-  //   totalCustomers += dayData.totalCustomers;
-  // });
-
-
  
-
   const getSecondKeyName = (arr) => {
     // Get the second key name from the first object in the array
     return Object.keys(arr[0])[1];
@@ -181,7 +157,7 @@ const Discounts = () => {
       <h1 className="pageHeader pl-2">Discounts</h1>
 
       <div className=" mt-3 h-[86%] ">
-        <div className="xl:h-[20%] h-[18%] flex gap-3 mb-4 ">
+        <div className="xl:h-[26%] h-[18%] flex gap-3 mb-4 ">
           {cardDetails.map((cardItem, cindex) => (
             <Card
               key={cindex}
@@ -193,7 +169,7 @@ const Discounts = () => {
             />
           ))}
         </div>
-        <div className="flex items-center  xl:mt-8 xl:h-[80%] lg:h-[85%] gap-4">
+        <div className="flex items-center  xl:my-4 2xl:h-[80%] lg:h-[60%] gap-4">
           <div className="w-[65%] h-full rounded-md">
             <DiscountProductList />
           </div>

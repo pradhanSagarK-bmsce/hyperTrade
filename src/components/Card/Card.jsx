@@ -21,7 +21,7 @@ const Card = ({ cname, cicon, cvalue, cgraph, cdelta }) => {
     {/* Header Section with Icon and Name */}
     <div className="flex items-center space-x-3 mb-1">
       <div
-        className={`xl:text-xl lg:text-md ${
+        className={`xl:text-[1.05] lg:text-md ${
           themeMode === "theme-mode-dark"
             ? "text-[#26DC5C]"
             : "text-[#26DC5C]"
@@ -44,7 +44,7 @@ const Card = ({ cname, cicon, cvalue, cgraph, cdelta }) => {
     <div className="xl:h-[57.25%] lg:h-[43%] flex justify-between">
       <div className="h-full flex items-center">
         <p
-          className={`md:text-[1.2rem] lg:text-[1.55rem] xl:text-[2.3rem] font-bold ${
+          className={`md:text-[1.2rem] lg:text-[1.55rem] xl:text-[2rem] font-bold ${
             themeMode === "theme-mode-dark"
               ? "text-gray-100"
               : "text-gray-800"

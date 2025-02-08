@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo } from "react";
-// import DataTable from "react-data-table-component";
 import {
   useTable,
   useSortBy,
@@ -50,9 +49,18 @@ function ProductList() {
 
   const columns = useMemo(
     () => [
+      // {
+      //   Header: "Product ID",
+      //   accessor: "_id", // Corresponds to the _id property in the product
+      // },
       {
         Header: "Product ID",
         accessor: "_id", // Corresponds to the _id property in the product
+        Cell: ({ value }) => (
+          <div className="max-w-[10ch] overflow-hidden text-ellipsis">
+            {value.length > 10 ? value.substring(0, 10) + "..." : value}
+          </div>
+        ),
       },
       {
         Header: "Product Name",
@@ -106,14 +114,14 @@ function ProductList() {
 
   return (
     <div
-      className={`w-full h-full rounded-lg p-6 flex flex-col shadow-lg ${
+      className={`w-full h-full rounded-lg p-4 2xl:p-6 flex flex-col shadow-lg ${
         themeMode === "theme-mode-dark"
           ? "bg-black text-txt-white"
           : "gradient-bg-light text-gray-800"
       }`}
     >
       {/* Header */}
-      <h1 className="text-3xl font-bold mb-6 tracking-wide">Product List</h1>
+      <h1 className="text-3xl font-bold 2xl:mb-6 mb-2  tracking-wide">Product List</h1>
       {products.length === 0 && status === "succeeded" ? (
         <div className="w-full h-full flex justify-center items-center">
           <NoProductComponent />
@@ -121,10 +129,10 @@ function ProductList() {
       ) : (
         <>
           {/* Add Product and Search Container */}
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center 2xl:mb-6 mb-2">
             {/* Add Product Button */}
             <button
-              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md px-4 py-2 transition-all mb-4 sm:mb-0 ${
+              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md px-3 py-2 transition-all mb-4 sm:mb-0 ${
                 themeMode === "theme-mode-dark"
                   ? "bg-[#26DC5C] text-black hover:bg-[#26DC5C]"
                   : "bg-[#26DC5C] text-white hover:bg-[#26DC5C]"
@@ -141,7 +149,7 @@ function ProductList() {
               value={globalFilter || ""}
               onChange={handleGlobalSearch}
               placeholder="Search products..."
-              className={`lg:w-[60%] sm:max-w-md px-4 py-2 rounded-md shadow focus:ring-2 focus:outline-none ${
+              className={`lg:w-[60%] sm:max-w-md px-3 py-1 2xl-py-2 rounded-md shadow focus:ring-2 focus:outline-none ${
                 themeMode === "theme-mode-dark"
                   ? "bg-gray-800 text-gray-300 focus:ring-[#26DC5C]"
                   : "bg-gray-100 text-gray-700 focus:ring-[#26DC5C]"
@@ -157,14 +165,14 @@ function ProductList() {
               </div>
             ) : (
               <div
-                className={`flex-grow rounded-lg p-4 ${
+                className={`rounded-lg p-2 2xl:p-4 ${
                   themeMode === "theme-mode-dark"
                     ? "gradient-bg-dark"
                     : "bg-transparent"
                 }`}
               >
                 {/* Table */}
-                <div className="overflow-x-auto flex-grow max-h-[50vh] sm:max-h-full">
+                <div className="max-h-[50vh] sm:max-h-full">
                   <table {...getTableProps()} className="w-full text-left">
                     <thead>
                       {headerGroups.map((headerGroup, hgsindex) => (
@@ -244,7 +252,7 @@ function ProductList() {
 
           {/* Pagination */}
           <div
-            className={`mt-4 flex justify-between items-center rounded-lg py-2 px-4 shadow-md ${
+            className={`flex justify-between items-center rounded-lg 2xl:mt-2 py-2 px-4 shadow-md ${
               themeMode === "theme-mode-dark" ? "bg-gray-800" : "bg-gray-100"
             }`}
           >
@@ -282,9 +290,9 @@ function ProductList() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap justify-between mt-6 gap-4">
+          <div className="flex flex-wrap justify-between mt-3 2xl:mt-6 gap-4">
             <button
-              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md px-4 py-2 transition ${
+              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md px-3 py-1 2xl-py-2 transition ${
                 themeMode === "theme-mode-dark"
                   ? "bg-orange-500 text-black hover:bg-orange-600"
                   : "bg-orange-400 text-white hover:bg-orange-500"
@@ -295,7 +303,7 @@ function ProductList() {
               <span>Update Product</span>
             </button>
             <button
-              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md px-4 py-2 transition ${
+              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md px-3 py-1 2xl-py-2 transition ${
                 themeMode === "theme-mode-dark"
                   ? "bg-blue-500 text-black hover:bg-blue-600"
                   : "bg-blue-400 text-white hover:bg-blue-500"
@@ -306,7 +314,7 @@ function ProductList() {
               <span>Edit Stock</span>
             </button>
             <button
-              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md px-4 py-2 transition ${
+              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md px-3 py-1 2xl-py-2 transition ${
                 themeMode === "theme-mode-dark"
                   ? "bg-red-600 text-black hover:bg-red-700"
                   : "bg-red-500 text-white hover:bg-red-600"

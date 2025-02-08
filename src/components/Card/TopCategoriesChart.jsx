@@ -63,7 +63,7 @@ const TopCategoriesChart = () => {
   const COLORS = themeMode === "theme-mode-dark" ? ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"] : ["#6ab04c", "#2980b9", "#FFBB28", "#FF8042"];
 
   return (
-    <div className={`w-full h-full p-4 flex flex-col shadow-lg ${themeMode === "theme-mode-dark"
+    <div className={`w-full h-full lg:px-1 3xl:px-4 lg:py-2 2xl:py-4 flex flex-col shadow-lg ${themeMode === "theme-mode-dark"
           ? "text-txt-white"
           : "text-gray-800"}`}>
       <h3 className="text-center text-2xl font-semibold mb-4">
@@ -77,7 +77,7 @@ const TopCategoriesChart = () => {
         
         
       {/* Container for the chart with a smaller responsive container */}
-      <div className="rounded-xl h-[60%]">
+      <div className="rounded-xl h-[58%]">
         <ResponsiveContainer width="100%" height="100%" style={{ border: 'none', margin: 0, padding: 0 }}>
           <PieChart style={{ border: 'none', margin: 0, padding: 0 }}>
             <Pie

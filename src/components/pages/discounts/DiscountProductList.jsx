@@ -155,7 +155,7 @@ function DiscountProductList() {
           </div>
 
           {/* Table Container */}
-          <div className="flex-grow flex flex-col">
+          <div className="flex flex-col">
             {status !== "succeeded" || !products ? (
               <div className="flex-grow flex justify-center items-center">
                 <LoadingComponent />
@@ -248,7 +248,7 @@ function DiscountProductList() {
 
           {/* Pagination */}
           <div
-            className={`mt-4 flex justify-between items-center rounded-lg py-2 px-4 shadow-md ${
+            className={`mt-1 flex justify-between items-center rounded-lg py-2 px-4 shadow-md ${
               themeMode === "theme-mode-dark" ? "bg-gray-800" : "bg-gray-100"
             }`}
           >

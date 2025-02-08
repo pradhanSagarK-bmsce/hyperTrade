@@ -18,8 +18,8 @@ const DonutChart = ({ data }) => {
   const getPercentage = (value) => ((value / totalValue) * 100).toFixed(2);
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-4">
-      <ResponsiveContainer width="100%" height={400}>
+    <div className="w-full h-full max-w-2xl mx-auto p-2">
+      <ResponsiveContainer width="100%" height={420}>
         <PieChart>
           <Pie
             data={data}

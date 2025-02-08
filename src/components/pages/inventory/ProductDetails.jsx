@@ -36,7 +36,7 @@ const selectedProduct = useSelector((state) => state.selectProduct);
  
   return (
 <div
-  className={`flex flex-col items-center justify-center w-full h-full p-6 rounded-lg shadow-lg max-w-6xl mx-auto ${
+  className={`flex flex-col items-center justify-center w-full h-full p-6 rounded-lg shadow-lg  mx-auto ${
     themeMode === "theme-mode-dark"
       ? "gradient-bg-dark text-gray-200"
       : "gradient-bg-light text-gray-800"

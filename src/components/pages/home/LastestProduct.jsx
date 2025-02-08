@@ -8,7 +8,7 @@ const LastestProduct = ({ products }) => {
 
   useEffect(() => {
     // Reverse and slice the products to get the latest ones
-    const reversedProducts = [...products].reverse().slice(0, 4);
+    const reversedProducts = window.innerWidth > 1600 ? [...products].reverse().slice(0, 4) : [...products].reverse().slice(0,3);
     setLatestProducts(reversedProducts);
   }, [products]);
 

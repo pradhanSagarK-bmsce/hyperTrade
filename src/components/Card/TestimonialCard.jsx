@@ -23,7 +23,7 @@ const TestimonialCard = ({
 
   return (
     <div
-      className={`rounded-lg p-4 flex flex-col 
+      className={` max-2xl:mt-2 rounded-lg p-4 flex flex-col 
                   ${
                     themeMode === 'theme-mode-dark'
                       ? 'bg-gray-800 text-white border-gray-700'
@@ -38,7 +38,7 @@ const TestimonialCard = ({
             <img
               src={imageUrl}
               alt="Customer"
-              className="w-14 h-14 rounded-full object-cover border-2 border-custom"
+              className="w-12 h-12 mt-3 3xl:mt-0 rounded-full object-cover border-2 border-custom"
             />
           </div>
           <div>

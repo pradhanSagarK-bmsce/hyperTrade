@@ -94,12 +94,12 @@ const AnalyticsCard = () => {
   };
 
   return (
-    <div className="w-full h-full bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-400 rounded-lg p-4 sm:p-5 md:p-6 shadow-2xl transform transition-all duration-500 grid grid-cols-2 gap-4 overflow-hidden">
+    <div className="w-full h-full bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-400 rounded-lg p-4 sm:p-5 3xl:p-6 shadow-2xl transform transition-all duration-500 grid grid-cols-2 gap-4 overflow-hidden">
       {/* Total Customers Section */}
       <div className="flex flex-col items-start space-y-1 w-full">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center lg:space-x-1 3xl:space-x-2">
           <FaUsers className="text-white text-2xl" /> 
-          <span className="text-white text-xs sm:text-sm font-medium">Total Customers</span>
+          <span className="text-white text-xs sm:text-[0.8rem]lg:text-sm font-medium">Total Customers</span>
         </div>
         <div className="text-white text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
           {(sales.length !== 0 && customerCount) ? customerCount.toLocaleString("en-IN") : 0}
@@ -108,9 +108,9 @@ const AnalyticsCard = () => {
 
       {/* Products Sold Section */}
       <div className="flex flex-col items-start space-y-1 w-full">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center lg:space-x-1 3xl:space-x-2">
           <FaCartShopping className="text-white text-2xl" />
-          <span className="text-white text-xs sm:text-sm font-medium">Products Sold</span>
+          <span className="text-white text-xs sm:text-[0.8rem]lg:text-sm font-medium">Products Sold</span>
         </div>
         <div className="text-white text-xl sm:text-2xl font-bold">
           {(sales.length !== 0 && totalSold) ? totalSold.toLocaleString("en-IN") : 0}
@@ -119,9 +119,9 @@ const AnalyticsCard = () => {
 
       {/* Average Order Value Section */}
       <div className="flex flex-col items-start space-y-1 w-full">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center lg:space-x-1 3xl:space-x-2">
           <FaDollarSign className="text-white text-2xl" />
-          <span className="text-white text-xs sm:text-sm font-medium">Avg Order Value</span>
+          <span className="text-white text-xs sm:text-[0.8rem]lg:text-sm font-medium">Avg Order Value</span>
         </div>
         <div className={`text-white ${getTextSize()}`}>
           ₹
@@ -136,9 +136,9 @@ const AnalyticsCard = () => {
 
       {/* Average Rating Section */}
       <div className="flex flex-col items-start space-y-1 w-full">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center lg:space-x-1 3xl:space-x-2">
           <FaStar className="text-white text-2xl" /> 
-          <span className="text-white text-xs sm:text-sm font-medium">Avg Rating</span>
+          <span className="text-white text-xs sm:text-[0.8rem]lg:text-sm font-medium">Avg Rating</span>
         </div>
       <div className="text-white text-xl sm:text-2xl font-bold">{sales.length !== 0 ? `${averageRating}/5` : "0"}</div>
       </div>

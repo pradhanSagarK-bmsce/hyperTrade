@@ -95,7 +95,7 @@ function CustomerList() {
     {
       columns,
       data: customers,
-      initialState: { pageSize: 4 },
+      initialState: { pageSize: 3 },
     },
     useGlobalFilter,
     useSortBy,
@@ -114,14 +114,19 @@ function CustomerList() {
           : "gradient-bg-light text-gray-800"
       }`}
     >
-      <h1 className="text-3xl font-bold mb-6 tracking-wide">Customer List</h1>
+     { window.innerWidth > 1600 ? (<h1 className="text-3xl font-bold mb-6 tracking-wide">Customer List</h1>) : (null) }
       {customers.length === 0 ? (
         <div className="w-full h-full flex justify-center items-center">
+            <h1 className="text-3xl font-bold mb-6 tracking-wide">Customer List</h1>
             <NoCustomersComponent />
         </div>
       ) : (
         <>
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 2xl:mb-6">
+            {
+              window.innerHeight < 1600 ? (<h1 className="text-3xl font-bold tracking-wide">Customer List</h1>) :
+              null
+            }
             <input
               type="text"
               value={globalFilter || ""}
@@ -226,7 +231,7 @@ function CustomerList() {
           </div>
 
           <div
-            className={`mt-4 flex justify-between items-center rounded-lg py-2 px-4 shadow-md ${
+            className={`2xl:mt-4 mt-3 flex justify-between items-center rounded-lg 2xl:py-2 px-4 shadow-md ${
               themeMode === "theme-mode-dark" ? "bg-gray-800" : "bg-gray-100"
             }`}
           >

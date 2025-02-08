@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../../redux/features/ProductsDataSlice";
+import "./Home.css"
 import Stats from "./Stats";
 import StatCard from "./StatCard";
 import { FaCircleDollarToSlot, FaChartLine } from "react-icons/fa6";
@@ -113,61 +114,7 @@ const Home = () => {
   return (
     <div className="w-full h-full flex flex-col gap-3">
       <h1 className="pageHeader pl-2">Home</h1>
-      {/* <div className="w-full h-[25%] rounded-md flex flex-col sm:flex-row">
-        <div
-          className="w-full sm:w-[50%] h-full rounded-md"
-          style={{
-            backgroundImage: `url(${bannerImg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="w-full h-full banner-bg-gradient flex justify-between">
-            <div className="h-full flex flex-col gap-2 w-full sm:w-[70%] p-4">
-              <h2 className="lg:text-3xl font-semibold text-[#26DC5C]">Welcome Back</h2>
-              <span className="lg:text-2xl font-semibold text-txt-white">
-                {vendorName || "company Name"}
-              </span>
-              <p className="lg:text-[0.85rem] w-full sm:w-[80%] font-semibold text-[#AFAFAF]">
-                We’re thrilled to see you again. Your store’s growth matters to us, and we’re here to help. Take a look at the latest insights, manage your inventory, and keep your sales growing!
-              </p>
-              <button
-                className="lg:w-[140px] rounded-md bg-[#DA653A] p-1 text-black font-semibold mt-2"
-                onClick={handleExploreOrders}
-              >
-                Explore Stats
-              </button>
-            </div>
-            <div className="astroContainer h-full w-[30%] sm:w-[18%]">
-              <img
-                src={martianWaving}
-                alt="Martian waving , greeting welcome back vendor" 
-                className="w-full h-full"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="w-full sm:w-[30%] h-full">
-             
-          <FinancialCard />
-        </div>
-        <div className={`sm:w-[20%] max-h-full rounded-lg ${themeMode === "theme-mode-dark"
-          ? "bg-gradient-to-br from-purple-900 via-rose-900 to-purple-900"
-          : "gradient-bg-light"}`}>
-          <TopCategoriesChart />
-        </div>
-      </div>
-
-      <div className="w-full h-[40%] flex gap-4 rounded-lg">
-       
-        <div className="w-[25%] h-full flex gap-2">
-          <LastestProduct products={products} />
-        </div>
-        <div className="w-[53.2%] h-full">
-          <LatestOrderHome />
-        </div>
-      </div> */}
-
+   
       <div className="w-full h-[95%] grid grid-cols-9 grid-rows-11 gap-3 ">
         <div className="col-span-4 row-span-3  rounded-lg">
           <div
@@ -179,20 +126,20 @@ const Home = () => {
             }}
           >
             <div className="w-full h-full rounded-lg banner-bg-gradient flex justify-between">
-              <div className="h-full flex flex-col gap-2 w-full sm:w-[70%] p-4">
-                <h2 className="lg:text-3xl font-semibold text-[#26DC5C]">
+              <div className="h-full flex flex-col gap-[0.175rem] 3xl:gap-2 w-full sm:w-[70%] p-3 3xl:p-4">
+                <h2 className="welcomeText font-semibold text-[#26DC5C]">
                   Welcome Back
                 </h2>
-                <span className="lg:text-2xl font-semibold text-txt-white">
+                <span className=" companyNameText font-semibold text-txt-white">
                   {vendorName || "company Name"}
                 </span>
-                <p className="lg:text-[0.85rem] w-full sm:w-[80%] font-semibold text-[#AFAFAF]">
+                <p className="companyDescText w-full sm:w-[80%] font-semibold text-[#AFAFAF]">
                   We’re thrilled to see you again. Your store’s growth matters
                   to us, and we’re here to help. Take a look at the latest
                   insights, manage your inventory, and keep your sales growing!
                 </p>
                 <button
-                  className="lg:w-[140px] rounded-md bg-[#DA653A] p-1 text-black font-semibold mt-2"
+                  className="exploreBtn lg:w-[140px] rounded-md text-sm bg-[#DA653A] p-1 text-black font-semibold mt-1"
                   onClick={handleExploreOrders}
                 >
                   Explore Orders

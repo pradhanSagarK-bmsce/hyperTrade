@@ -80,7 +80,7 @@ const LatestOrdersHome = () => {
     >
      <h1 className={`text-2xl ${
         themeMode === 'theme-mode-dark' ? 'text-txt-white' : 'text-black'
-      } font-bold mb-6 tracking-wide`}>Latest Orders</h1>
+      } font-bold mb-4 2xl:mb-6 tracking-wide`}>Latest Orders</h1>
     {
       sales.length < 1 ? (
          <div className="w-full h-full mb-8 flex justify-center items-center"><NoOrdersComponent /></div>
@@ -90,13 +90,13 @@ const LatestOrdersHome = () => {
         <div className="w-full flex justify-between items-center">
        
         {/* Search Bar */}
-        <div className="mb-4  w-[60%] justify-self-end">
+        <div className=" mb-2 2xl:mb-4 w-[60%] justify-self-end">
             <input
       type="text"
       placeholder="Search by order ID or customer"
       value={globalFilter || ""}
       onChange={handleGlobalSearch}
-      className={`lg:w-full px-4 py-2 rounded-md shadow focus:outline-none focus:ring-0 focus:border-transparent ${
+      className={`lg:w-full px-4 py-1 3xl:py-2 rounded-md shadow focus:outline-none focus:ring-0 focus:border-transparent ${
         themeMode === "theme-mode-dark" ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
       }`}
     />  

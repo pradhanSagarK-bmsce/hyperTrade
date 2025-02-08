@@ -1,5 +1,6 @@
 import React from "react";
 import StatCard from "../home/StatCard";
+import "./Inventory.css";
 import { FaCircleDollarToSlot, FaChartLine } from "react-icons/fa6";
 import { BiReceipt, BiSolidUserAccount } from "react-icons/bi";
 import { useState, useEffect } from "react";
@@ -29,7 +30,7 @@ const Inventory = () => {
     { day: "Tuesday", profit: -78.41 },
     { day: "Wednesday", profit: -125.89 },
     { day: "Thursday", profit: -67.71 },
-    { day: "Friday", profit: -15.00 },
+    { day: "Friday", profit: -15.0 },
     { day: "Saturday", profit: -93.98 },
     { day: "Sunday", profit: -127.79 },
   ];
@@ -54,35 +55,35 @@ const Inventory = () => {
     { day: "Sun", totalCustomers: 29 },
   ];
 
-//   let totalRevenue = 0;
-// let totalProfit = 0;
-// let totalProductsSold = 0;
-// let totalCustomers = 0;
+  //   let totalRevenue = 0;
+  // let totalProfit = 0;
+  // let totalProductsSold = 0;
+  // let totalCustomers = 0;
 
-// // Sum up the values from each dataset
-// weekDataTR.forEach(dayData => {
-//   totalRevenue += dayData.revenue;
-// });
+  // // Sum up the values from each dataset
+  // weekDataTR.forEach(dayData => {
+  //   totalRevenue += dayData.revenue;
+  // });
 
-// weekDataTP.forEach(dayData => {
-//   totalProfit += dayData.profit;
-// });
+  // weekDataTP.forEach(dayData => {
+  //   totalProfit += dayData.profit;
+  // });
 
-// weekDataPS.forEach(dayData => {
-//   totalProductsSold += dayData.productsSold;
-// });
+  // weekDataPS.forEach(dayData => {
+  //   totalProductsSold += dayData.productsSold;
+  // });
 
-// weekDataTC.forEach(dayData => {
-//   totalCustomers += dayData.totalCustomers;
-// });
+  // weekDataTC.forEach(dayData => {
+  //   totalCustomers += dayData.totalCustomers;
+  // });
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.productsData.products);
   const status = useSelector((state) => state.productsData.status);
   const error = useSelector((state) => state.productsData.error);
-const orders = useSelector((state) => state.ordersData.orders)
- const [sales, setSales] = useState([]);
- const [customerCount, setCustomerCount] = useState(0); // unique customers count
+  const orders = useSelector((state) => state.ordersData.orders);
+  const [sales, setSales] = useState([]);
+  const [customerCount, setCustomerCount] = useState(0); // unique customers count
   const [totalSold, setTotalSold] = useState(0); // total products sold
   const productsSold = () => {
     // console.log("Calculating total products sold...");
@@ -91,14 +92,13 @@ const orders = useSelector((state) => state.ordersData.orders)
     return total;
   };
 
-   useEffect(() => {
-      if (orders && orders.sales) {
-        setSales(orders.sales);
-      }
-    }, [orders]);
-  
+  useEffect(() => {
+    if (orders && orders.sales) {
+      setSales(orders.sales);
+    }
+  }, [orders]);
 
- // Update customer count, total products sold, and average order value when sales change
+  // Update customer count, total products sold, and average order value when sales change
   useEffect(() => {
     if (sales.length > 0) {
       // Calculate unique customers count from sales
@@ -108,54 +108,72 @@ const orders = useSelector((state) => state.ordersData.orders)
 
       const total = productsSold();
       setTotalSold(total);
-
     }
   }, [sales]);
 
   const getSecondKeyName = (arr) => {
     // Get the second key name from the first object in the array
     return Object.keys(arr[0])[1];
-  }
+  };
 
   const cardDetails = [
     {
       cname: "Total Revenue",
       cicon: <FaCircleDollarToSlot />,
-      cvalue: `₹${orders ? orders.totalRevenue?.toLocaleString('en-IN') : 0}`,
-      cgraph: orders && orders.totalRevenue > 0 
-               ? <CardGraph data={weekDataTR} dataKey={getSecondKeyName(weekDataTR)} dataColor={"#3B82F6"} /> 
-               : null,  // Set to null if there's no data or the value is <= 0
+      cvalue: `₹${orders ? orders.totalRevenue?.toLocaleString("en-IN") : 0}`,
+      cgraph:
+        orders && orders.totalRevenue > 0 ? (
+          <CardGraph
+            data={weekDataTR}
+            dataKey={getSecondKeyName(weekDataTR)}
+            dataColor={"#3B82F6"}
+          />
+        ) : null, // Set to null if there's no data or the value is <= 0
       cdelta: orders && orders.totalRevenue > 0 ? "12.5" : "0",
     },
     {
       cname: "Total Profit",
       cicon: <FaChartLine />,
-      cvalue: `₹${orders ? orders.totalProfits?.toLocaleString('en-IN') : 0}`,
-      cgraph: orders && orders.totalProfits > 0 
-               ? <CardGraph data={weekDataTP} dataKey={getSecondKeyName(weekDataTP)} dataColor={"#10B981"} /> 
-               : null,  // Set to null if there's no data or the value is <= 0
+      cvalue: `₹${orders ? orders.totalProfits?.toLocaleString("en-IN") : 0}`,
+      cgraph:
+        orders && orders.totalProfits > 0 ? (
+          <CardGraph
+            data={weekDataTP}
+            dataKey={getSecondKeyName(weekDataTP)}
+            dataColor={"#10B981"}
+          />
+        ) : null, // Set to null if there's no data or the value is <= 0
       cdelta: orders && orders.totalProfits > 0 ? "8.2" : "0",
     },
     {
       cname: "Product Sold",
       cicon: <BiReceipt />,
       cvalue: `${totalSold ? totalSold.toLocaleString("en-IN") : 0}`,
-      cgraph: totalSold && totalSold > 0 
-               ? <CardGraph data={weekDataPS} dataKey={getSecondKeyName(weekDataPS)} dataColor={"#6B46C1"} /> 
-               : null,  // Set to null if there's no data or the value is <= 0
+      cgraph:
+        totalSold && totalSold > 0 ? (
+          <CardGraph
+            data={weekDataPS}
+            dataKey={getSecondKeyName(weekDataPS)}
+            dataColor={"#6B46C1"}
+          />
+        ) : null, // Set to null if there's no data or the value is <= 0
       cdelta: totalSold && totalSold > 0 ? "10" : "0",
     },
     {
       cname: "Total Customers",
       cicon: <BiSolidUserAccount />,
       cvalue: `${customerCount ? customerCount.toLocaleString("en-IN") : 0}`,
-      cgraph: customerCount && customerCount > 0 
-               ? <CardGraph data={weekDataTC} dataKey={getSecondKeyName(weekDataTC)} dataColor={"#F97316"} /> 
-               : null,  // Set to null if there's no data or the value is <= 0
+      cgraph:
+        customerCount && customerCount > 0 ? (
+          <CardGraph
+            data={weekDataTC}
+            dataKey={getSecondKeyName(weekDataTC)}
+            dataColor={"#F97316"}
+          />
+        ) : null, // Set to null if there's no data or the value is <= 0
       cdelta: customerCount && customerCount > 0 ? "15" : "0",
     },
   ];
-  
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -166,22 +184,26 @@ const orders = useSelector((state) => state.ordersData.orders)
     <div className="h-full">
       <h1 className="pageHeader pl-2">Inventory</h1>
 
-      <div className=" mt-3 h-[86%] ">
-        <div className="xl:h-[20%] h-[18%] flex gap-3 mb-4 ">
-         {cardDetails.map((cardItem,cindex) => (
-              <Card key={cindex}
-                cname={cardItem.cname}
-                cicon={cardItem.cicon}
-                cvalue={cardItem.cvalue}
-                cgraph={cardItem.cgraph}
-                cdelta={cardItem.cdelta}
-              />
-            ))} 
+      <div className=" mt-3 h-[94%]">
+        <div className="2xl:h-[25%] h-[18%] flex gap-3 mb-2 ">
+          {cardDetails.map((cardItem, cindex) => (
+            <Card
+              key={cindex}
+              cname={cardItem.cname}
+              cicon={cardItem.cicon}
+              cvalue={cardItem.cvalue}
+              cgraph={cardItem.cgraph}
+              cdelta={cardItem.cdelta}
+            />
+          ))}
         </div>
-        <div className="flex items-center  xl:mt-8 xl:h-[80%] lg:h-[85%] gap-4">
-       
-          <div className="w-[45%] bg-main-bg h-full rounded-md"><ProductList  /></div>
-          <div className="w-[55%] rounded-md h-full  flex flex-wrap bg-main-bg"><ProductDetails /></div>
+        <div className="custom-grid">
+          <div className="product-list">
+            <ProductList />
+          </div>
+          <div className="product-details">
+            <ProductDetails />
+          </div>
         </div>
       </div>
       <Outlet />

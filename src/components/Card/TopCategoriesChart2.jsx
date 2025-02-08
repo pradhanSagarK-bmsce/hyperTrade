@@ -77,7 +77,7 @@ const TopCategoriesChart2 = () => {
         
         
       {/* Container for the chart with a smaller responsive container */}
-      <div className="rounded-xl h-[60%]">
+      <div className="rounded-xl 3xl:h-[64%] h-[60%]">
         <ResponsiveContainer width="100%" height="100%" style={{ border: 'none', margin: 0, padding: 0 }}>
           <PieChart style={{ border: 'none', margin: 0, padding: 0 }}>
             <Pie
@@ -88,8 +88,8 @@ const TopCategoriesChart2 = () => {
               cy="50%"  // This ensures the center of the pie chart is aligned
               startAngle={360}
               endAngle={0}
-              innerRadius={120}  // Reduced the inner radius to fit more in the container
-              outerRadius={150}  // Adjusted the outer radius for smaller chart
+              innerRadius={95}  // Reduced the inner radius to fit more in the container
+              outerRadius={125}  // Adjusted the outer radius for smaller chart
               paddingAngle={3} // Gap between arches
               cornerRadius={7} // Rounded edges
               labelLine={false} // Disable label line
@@ -112,9 +112,9 @@ const TopCategoriesChart2 = () => {
                 className="w-3 h-3 rounded-full"
                 style={{ backgroundColor: COLORS[index % COLORS.length] }}
               ></span>
-              <span className="text-sx font-semibold">{entry.name}</span>
+              <span className="text-[0.90rem] font-semibold">{entry.name}</span>
             </div>
-            <div className="text-[0.85rem]">
+            <div className="text-[0.80rem]">
               {((entry.value / sales.reduce((sum, sale) => sum + sale.saleRevenue, 0)) * 100).toFixed(2)}%
             </div>
           </div>
