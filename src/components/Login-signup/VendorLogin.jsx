@@ -95,7 +95,7 @@ const VendorLogin = ({ setVendorInfo }) => {
 
           <div
             id="emailcontainer"
-            className="inputcontainer h-16 w-[300px] mb-[0.1rem]"
+            className="inputcontainer h-[5.5rem] w-[300px] mb-[0.1rem]"
           >
             <label
               className="text-sm font-medium text-white"
@@ -154,7 +154,7 @@ const VendorLogin = ({ setVendorInfo }) => {
             )}
           </div>
 
-          <p className="text-white">
+          <p className="text-white mt-4">
             dont have account ?
             <strong className="text-orange-600 cursor-pointer">
               <Link to="/signup">Signup</Link>
