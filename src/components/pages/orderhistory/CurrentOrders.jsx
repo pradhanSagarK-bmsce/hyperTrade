@@ -181,7 +181,7 @@ function CurrentOrders() {
             />
 
             <button
-              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md px-4 py-2 transition-all mb-4 sm:mb-0 ${
+              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md lg:text-[0.75rem] 3xl:px-4 px-2 py-2 transition-all mb-4 sm:mb-0 ${
                 themeMode === "theme-mode-dark"
                   ? "bg-[#2c99ff] text-black hover:bg-[#5baffd]"
                   : "bg-[#2c99ff] text-white hover:bg-[#5baffd]"
@@ -194,7 +194,7 @@ function CurrentOrders() {
 
             {/*  Accet order Button */}
             <button
-              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md px-4 py-2 transition-all mb-4 sm:mb-0 ${
+              className={`flex items-center gap-2 rounded-lg font-semibold shadow-md lg:text-[0.75rem] 3xl:px-4 px-2 py-2 transition-all mb-4 sm:mb-0 ${
                 themeMode === "theme-mode-dark"
                   ? "bg-[#ffd82c] text-black hover:bg-[#ffd050]"
                   : "bg-[#ffd82c] text-white hover:bg-[#ffd050]"

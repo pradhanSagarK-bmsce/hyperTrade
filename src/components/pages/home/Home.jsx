@@ -98,18 +98,18 @@ const Home = () => {
     },
   ];
 
-  const salesByProducts = [
-    { name: "Product A", value: 400 },
-    { name: "Product B", value: 300 },
-    { name: "Product C", value: 200 },
-    { name: "Product D", value: 100 },
-    { name: "Product E", value: 150 },
-    { name: "Product F", value: 250 },
-    { name: "Product G", value: 450 },
-    { name: "Product H", value: 300 },
-    { name: "Product I", value: 180 },
-    { name: "Product J", value: 50 },
-  ];
+  // const salesByProducts = [
+  //   { name: "Product A", value: 400 },
+  //   { name: "Product B", value: 300 },
+  //   { name: "Product C", value: 200 },
+  //   { name: "Product D", value: 100 },
+  //   { name: "Product E", value: 150 },
+  //   { name: "Product F", value: 250 },
+  //   { name: "Product G", value: 450 },
+  //   { name: "Product H", value: 300 },
+  //   { name: "Product I", value: 180 },
+  //   { name: "Product J", value: 50 },
+  // ];
 
   return (
     <div className="w-full h-full flex flex-col gap-3">

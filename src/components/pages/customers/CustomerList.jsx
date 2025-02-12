@@ -114,10 +114,10 @@ function CustomerList() {
           : "gradient-bg-light text-gray-800"
       }`}
     >
-     { window.innerWidth > 1600 ? (<h1 className="text-3xl font-bold mb-6 tracking-wide">Customer List</h1>) : (null) }
+     { customers.length === 0 ? (<h1 className="text-3xl font-bold mb-6 tracking-wide">Customer List</h1>) : (null) }
       {customers.length === 0 ? (
         <div className="w-full h-full flex justify-center items-center">
-            <h1 className="text-3xl font-bold mb-6 tracking-wide">Customer List</h1>
+            {/* <h1 className="text-3xl font-bold mb-6 tracking-wide">Customer List</h1> */}
             <NoCustomersComponent />
         </div>
       ) : (
