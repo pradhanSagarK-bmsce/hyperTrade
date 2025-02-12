@@ -60,6 +60,17 @@ const getMonthlySummary = (sales) => {
 
 // Get the monthly summary
 const monthlyData = getMonthlySummary(sales);
+
+// Define the order of months
+const monthOrder = {
+    'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6,
+    'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12
+  };
+  
+  // Sort the array based on the month order
+  monthlyData.sort((a, b) => monthOrder[a.month] - monthOrder[b.month]);
+
+
 // console.log(monthlyData);
 
     const data = !orders ?  [
