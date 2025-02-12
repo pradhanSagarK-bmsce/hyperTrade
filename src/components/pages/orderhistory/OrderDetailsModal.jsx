@@ -82,36 +82,40 @@ const OrderDetailsModal = ({
               themeMode === "theme-mode-dark"
                 ? "gradient-bg-dark text-txt-white"
                 : "gradient-bg-light text-black"
-            } rounded-lg w-full max-w-4xl relative shadow-2xl`}
+            } rounded-lg w-full max-w-3xl h-[80%] relative shadow-lg`}
           >
-            <div className="p-6 space-y-6">
+            <div className="p-4 space-y-4">
               {/* Header */}
               <div className="flex justify-between items-center">
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-[#26DC5C] to-teal-500 bg-clip-text text-transparent">
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-[#26DC5C] to-teal-500 bg-clip-text text-transparent">
                   Order Details
                 </h2>
                 <button className="transition-colors" onClick={onClose}>
-                  <FaX className="text-xl" />
+                  <FaX className="text-lg" />
                 </button>
               </div>
 
               {/* Order Info */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div
                   className={`${
                     themeMode === "theme-mode-dark"
                       ? "bg-gradient-to-r from-gray-900/70 to-gray-800/70 border border-gray-700"
-                      : "bg-white shadow-lg"
-                  } p-4 rounded-lg `}
+                      : "bg-white shadow-md"
+                  } p-3 rounded-lg`}
                 >
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-2">
                       <FaHashtag className="text-[#26DC5C]" />
-                      <span>Order ID: {selectedSale?.orderId || "N/A"}</span>
+                      <span className="text-sm">
+                        Order ID: {selectedSale?.orderId || "N/A"}
+                      </span>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2">
                       <FaCalendar className="text-[#26DC5C]" />
-                      <span>{selectedSale?.orderDateTime || "N/A"}</span>
+                      <span className="text-sm">
+                        {selectedSale?.orderDateTime || "N/A"}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -121,11 +125,11 @@ const OrderDetailsModal = ({
                   className={`${
                     themeMode === "theme-mode-dark"
                       ? "bg-gradient-to-r from-gray-900/70 to-gray-800/70 border border-gray-700"
-                      : "bg-white shadow-lg"
-                  } p-4 rounded-lg `}
+                      : "bg-white shadow-md"
+                  } p-3 rounded-lg`}
                 >
-                  <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 rounded-full border-2 border-[#26DC5C] overflow-hidden">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-14 h-14 rounded-full border-2 border-[#26DC5C] overflow-hidden">
                       <img
                         src={selectedSale?.custPic}
                         alt="Customer"
@@ -133,10 +137,12 @@ const OrderDetailsModal = ({
                       />
                     </div>
                     <div>
-                      <h3 className={` font-semibold`}>
+                      <h3 className="text-sm font-semibold">
                         {selectedSale?.custName || "John Anderson"}
                       </h3>
-                      <p>Customer ID: {selectedSale?.custId || "CUS-789456"}</p>
+                      <p className="text-xs">
+                        Customer ID: {selectedSale?.custId || "CUS-789456"}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -147,11 +153,11 @@ const OrderDetailsModal = ({
                 className={`${
                   themeMode === "theme-mode-dark"
                     ? "bg-gradient-to-r from-gray-900/70 to-gray-800/70 border border-gray-700"
-                    : "bg-white shadow-lg"
-                } p-4 rounded-lg `}
+                    : "bg-white shadow-md"
+                } p-3 rounded-lg`}
               >
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="w-full md:w-1/3">
+                <div className="flex flex-col md:flex-row gap-4">
+                  <div className="w-full md:w-1/4">
                     <div className="aspect-square rounded-lg border border-[#26DC5C]/30">
                       <img
                         src={selectedSale?.image}
@@ -160,30 +166,30 @@ const OrderDetailsModal = ({
                       />
                     </div>
                   </div>
-                  <div className="w-full md:w-2/3 space-y-4">
-                    <h3 className="text-xl font-semibold ">
+                  <div className="w-full md:w-3/4 space-y-3">
+                    <h3 className="text-lg font-semibold">
                       {selectedSale?.productName ||
                         "Premium Wireless Headphones"}
                     </h3>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <p>Variant</p>
+                        <p className="text-sm">Variant</p>
                         <p>{selectedSale?.variant || "Matte Black"}</p>
                       </div>
                       <div>
-                        <p>Quantity</p>
+                        <p className="text-sm">Quantity</p>
                         <p>{selectedSale?.quantity || "2"}</p>
                       </div>
                       <div>
-                        <p>Revenue</p>
+                        <p className="text-sm">Revenue</p>
                         <p className="text-[#357afa] font-semibold">
-                         ₹{selectedSale?.saleRevenue || "599.98"}
+                          ₹{selectedSale?.itemRevenue || "599.98"}
                         </p>
                       </div>
                       <div>
-                        <p>Profit</p>
+                        <p className="text-sm">Profit</p>
                         <p className="text-green-400 font-semibold">
-                         ₹{selectedSale?.saleProfit || "179.99"}
+                          ₹{selectedSale?.itemProfit || "179.99"}
                         </p>
                       </div>
                     </div>
@@ -196,16 +202,18 @@ const OrderDetailsModal = ({
                 className={`${
                   themeMode === "theme-mode-dark"
                     ? "bg-gradient-to-r from-gray-900/70 to-gray-800/70 border border-gray-700"
-                    : "bg-white shadow-lg"
-                } p-4 rounded-lg `}
+                    : "bg-white shadow-md"
+                } p-3 rounded-lg`}
               >
-                <h3 className=" font-semibold mb-3">Delivery Information</h3>
-                <div className="space-y-2">
-                  <p>
+                <h3 className="text-sm font-semibold mb-2">
+                  Delivery Information
+                </h3>
+                <div className="space-y-1">
+                  <p className="text-xs">
                     <FaMapLocationDot className="inline text-[#26DC5C] mr-2" />
                     {selectedSale?.deliveryAdd || "Mars base"}
                   </p>
-                  <p>
+                  <p className="text-xs">
                     <FaHashtag className="inline text-[#26DC5C] mr-2" />
                     {selectedSale?.deliveryPincode || "MRS111"}
                   </p>
@@ -220,7 +228,7 @@ const OrderDetailsModal = ({
                     themeMode === "theme-mode-dark"
                       ? "text-black"
                       : "text-white"
-                  } py-3 px-6 rounded-lg font-semibold shadow-md transition-all duration-300`}
+                  } py-2 px-4 mt-5 rounded-lg font-semibold shadow-md transition-all duration-300`}
                   onClick={onClose}
                 >
                   Close

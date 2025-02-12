@@ -173,7 +173,7 @@ function CurrentOrders() {
               value={globalFilter || ""}
               onChange={handleGlobalSearch}
               placeholder="Search orders..."
-              className={`lg:w-[60%] sm:max-w-md px-4 py-2 rounded-md shadow focus:ring-2 focus:outline-none ${
+              className={`lg:w-[55%] sm:max-w-md px-4 py-2 rounded-md shadow focus:ring-2 focus:outline-none ${
                 themeMode === "theme-mode-dark"
                   ? "bg-gray-800 text-gray-300 focus:ring-[#26DC5C]"
                   : "bg-gray-100 text-gray-700 focus:ring-[#26DC5C]"
